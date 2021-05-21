@@ -10,7 +10,7 @@ const AppForm = () => {
         <input
           type="text"
           onChange={e => setPosition(e.target.value)}
-          placeholder="Employee Position"
+          placeholder="Employee Positions"
         />
         <input
           type="number"
