@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
   const [position, setPosition] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [salary, setSalary] = useState('');
-  const [employees, setEmployees] = useState([{}]);
+  const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
     const getEmployee = JSON.parse(localStorage.getItem('employee'));
@@ -27,6 +27,7 @@ const AppProvider = ({ children }) => {
       setEmployees([
         ...employees,
         {
+          id: Math.random() * 100,
           name: name,
           position: position,
           phoneNumber: phoneNumber,
@@ -40,6 +41,7 @@ const AppProvider = ({ children }) => {
     const removeEmployee = [...employees].filter(
       employee => employee.id !== id
     );
+    setEmployees(removeEmployee);
   };
 
   return (
