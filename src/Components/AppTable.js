@@ -6,7 +6,7 @@ const AppTable = () => {
   const [employees, setEmployees] = emp__list;
   const { deleteEmployee } = emp__del;
 
-  return (
+  return employees != '' ? (
     <div className="App__table">
       <table>
         <div className="table__head">
@@ -31,6 +31,8 @@ const AppTable = () => {
         ))}
       </table>
     </div>
+  ) : (
+    ''
   );
 };
 

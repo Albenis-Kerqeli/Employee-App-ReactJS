@@ -10,11 +10,11 @@ const AppProvider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    const getEmployee = JSON.parse(localStorage.getItem('employee'));
+    const getEmployee = JSON.parse(localStorage.getItem('employes'));
     if (getEmployee) {
       setEmployees(getEmployee);
     }
-  });
+  }, []);
   useEffect(() => {
     localStorage.setItem('employes', JSON.stringify(employees));
   }, [employees]);
