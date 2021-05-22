@@ -34,6 +34,10 @@ const AppProvider = ({ children }) => {
           salary: salary
         }
       ]);
+      setName('');
+      setPosition('');
+      setAge('');
+      setSalary('');
     }
   };
 
