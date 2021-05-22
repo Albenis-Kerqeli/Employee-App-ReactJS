@@ -8,9 +8,19 @@
   background-color: #fef3e2;
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: center;
+  flex-direction: row;
   min-height: 100vh;
+}
+
+.App__text {
+  display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .App__row {

@@ -6,6 +6,10 @@ const AppTable = () => {
   const [employees, setEmployees] = emp__list;
   const { deleteEmployee } = emp__del;
 
+  const calc__Salary = employees.reduce((acc, current) => {
+    return acc + parseInt(current.salary);
+  }, 0);
+
   return employees != '' ? (
     <div className="App__table">
       <table>
@@ -29,6 +33,14 @@ const AppTable = () => {
             </tr>
           </div>
         ))}
+
+        <div className="table__data">
+          <tr>
+            <td>Total Employers : {employees.length}</td>
+
+            <td>Total Salary : {calc__Salary}</td>
+          </tr>
+        </div>
       </table>
     </div>
   ) : (

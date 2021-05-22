@@ -5,13 +5,13 @@ const AppForm = () => {
   const {
     emp__name,
     emp__position,
-    emp__phoneNumber,
+    emp__age,
     emp__salary,
     emp__add
   } = useContext(AppContext);
   const [name, setName] = emp__name;
   const [position, setPosition] = emp__position;
-  const [phoneNumber, setPhoneNumber] = emp__phoneNumber;
+  const [age, setAge] = emp__age;
   const [salary, setSalary] = emp__salary;
   const { addEmployee } = emp__add;
 
@@ -30,8 +30,8 @@ const AppForm = () => {
         />
         <input
           type="number"
-          onChange={e => setPhoneNumber(e.target.value)}
-          placeholder="Phone Number"
+          onChange={e => setAge(e.target.value)}
+          placeholder="Employee age"
         />
         <input
           type="number"

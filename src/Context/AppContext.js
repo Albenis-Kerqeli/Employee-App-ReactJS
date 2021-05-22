@@ -5,7 +5,7 @@ export const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [age, setAge] = useState('');
   const [salary, setSalary] = useState('');
   const [employees, setEmployees] = useState([]);
 
@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
 
   const addEmployee = e => {
     e.preventDefault();
-    if (name == '' || position == '' || phoneNumber == '' || salary == '') {
+    if (name == '' || position == '' || age == '' || salary == '') {
       alert('Fill all the fields');
     } else {
       setEmployees([
@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
           id: Math.random() * 100,
           name: name,
           position: position,
-          phoneNumber: phoneNumber,
+          age: age,
           salary: salary
         }
       ]);
@@ -50,7 +50,7 @@ const AppProvider = ({ children }) => {
         emp__list: [employees, setEmployees],
         emp__name: [name, setName],
         emp__position: [position, setPosition],
-        emp__phoneNumber: [phoneNumber, setPhoneNumber],
+        emp__age: [age, setAge],
         emp__salary: [salary, setSalary],
         emp__add: { addEmployee },
         emp__del: { deleteEmployee }
