@@ -1,4 +1,11 @@
-const AppForm = () => {
+import React from 'react';
+import { AppContext } from '../Context/AppContext';
+
+const AppTable = () => {
+  const { emp__list, emp__del } = React.useContext(AppContext);
+  const [employees, setEmployees] = emp__list;
+  const { deleteEmployee } = emp__del;
+
   return (
     <div className="App__table">
       <table>
@@ -18,7 +25,7 @@ const AppForm = () => {
               <td>{employee.position}</td>
               <td>{employee.phoneNumber}</td>
               <td>{employee.salary}</td>
-              <td>X</td>
+              <td onClick={() => deleteEmployee(employee.id)}>X</td>
             </tr>
           </div>
         ))}
@@ -27,4 +34,4 @@ const AppForm = () => {
   );
 };
 
-export default AppForm;
+export default AppTable;

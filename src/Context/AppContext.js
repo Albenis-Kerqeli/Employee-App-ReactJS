@@ -45,6 +45,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        emp__list: [employees, setEmployees],
         emp__name: [name, setName],
         emp__position: [position, setPosition],
         emp__phoneNumber: [phoneNumber, setPhoneNumber],
@@ -57,3 +58,5 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
+export default AppProvider;
