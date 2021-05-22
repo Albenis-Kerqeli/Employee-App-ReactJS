@@ -1,3 +1,17 @@
+import React from 'react';
+import { AppContext } from '../Context/AppContext';
+
+const AppForm = () => {
+  const {
+    emp__name,
+    emp__position,
+    emp__phoneNumber,
+    emp__salary
+  } = useContext(AppContext);
+
+
+
+
 const AppForm = () => {
   return (
     <div className="App__form">
