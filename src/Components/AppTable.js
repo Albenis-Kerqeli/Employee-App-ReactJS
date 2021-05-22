@@ -9,6 +9,10 @@ const AppTable = () => {
   const calc__Salary = employees.reduce((acc, current) => {
     return acc + parseInt(current.salary);
   }, 0);
+  const calc__Age = employees.reduce((current, employer) => {
+    return current + parseInt(employer.age) / employees.length;
+  }, 0);
+  console.log(employees.length);
 
   return employees != '' ? (
     <div className="App__table">
@@ -27,7 +31,7 @@ const AppTable = () => {
             <tr>
               <td>{employee.name}</td>
               <td>{employee.position}</td>
-              <td>{employee.phoneNumber}</td>
+              <td>{employee.age}</td>
               <td>{employee.salary}</td>
               <td onClick={() => deleteEmployee(employee.id)}>X</td>
             </tr>
@@ -37,7 +41,7 @@ const AppTable = () => {
         <div className="table__data">
           <tr>
             <td>Total Employers : {employees.length}</td>
-
+            <td>Average Employers Age : {calc__Age}</td>
             <td>Total Salary : {calc__Salary}</td>
           </tr>
         </div>
