@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../Context/AppContext';
 
 const AppForm = () => {
@@ -6,13 +6,15 @@ const AppForm = () => {
     emp__name,
     emp__position,
     emp__phoneNumber,
-    emp__salary
+    emp__salary,
+    emp__add
   } = useContext(AppContext);
+  const [name, setName] = emp__name;
+  const [position, setPosition] = emp__position;
+  const [phoneNumber, setPhoneNumber] = emp__phoneNumber;
+  const [salary, setSalary] = emp__salary;
+  const { addEmployee } = emp__add;
 
-
-
-
-const AppForm = () => {
   return (
     <div className="App__form">
       <form onSubmit={addEmployee}>
